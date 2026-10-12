@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    container_name: scam-message-detector
+    ports:
+      - "8000:8000"
+    environment:
+      - HF_MODEL_NAME=mrm8488/bert-tiny-finetuned-sms-spam-detection
+    restart: unless-stopped
